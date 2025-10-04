@@ -14,7 +14,7 @@ function App() {
     setInput("");
 
     try {
-      const res = await axios.post("http://localhost:5000/chat", { message: input });
+      const res = await axios.post("https://chatbot-backend-ykrv.onrender.com/chat", { message: input });
       const botMsg = { sender: "bot", text: res.data.reply };
       setMessages((prev) => [...prev, botMsg]);
     } catch (err) {
